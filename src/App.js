@@ -9,19 +9,20 @@ function App() {
 
 
   return (
-    <>
-      <div className="container text-center mt-3">
+    <div className='bg-dark'>
+      <header className="container text-center mt-3">
         <div className="row align-self-center">
-          <header className="col-12 align-self-center m-3">Star Wars</header>
+          <div className="col-12 align-self-center m-3 text-white">Star Wars</div>
         </div>
-      </div>
-      <div>
+      </header>
+      <body className='bg-dark'>
         <div className="container mt-3">
           <Home></Home>
           <Startships></Startships>
         </div>
-      </div>
-    </>
+      </body>
+
+    </div>
   );
 }
 
