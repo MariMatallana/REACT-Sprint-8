@@ -1,16 +1,37 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios'
+import { allStartShips } from './Startships-Logic';
 
+function Startships() {
 
-const allStartShips = async (state) => {
-    const peticion = await axios.get('https://swapi.dev/api/starships/')
-    state(peticion.data.results)
+    const [startships, setStartships ] = useState(null)
+
+  useEffect(() => {
+    allStartShips(setStartships)
+  }, [])
+
+  return (
+    <>
+        <div className="container">
+             <div className="row">
+                <div className="col-12">
+                    <div className="card text-start bg-dark ">
+                        <div className="card-body p-1" >
+                            {startships != null ? (startships.map(startship => (
+                            <div key={startship.id}>
+                                <h6 className="text-uppercase">{startship.name} </h6>
+                                <p>{startship.model}</p>
+                            </div>
+                            ))) : ('Cargando')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </>
+  )
 }
 
-export {
-    allStartShips
-}
-
+export default Startships;
 
 // function Startships() {
 
