@@ -1,32 +1,36 @@
 import { useEffect, useState } from 'react';
-import { allStartShips } from './Startships-Logic';
-
+import { allStartShips } from './Logic';
+import {Link} from 'react-router-dom'
 
 function Startships() {
 
     const [startships, setStartships ] = useState(null)
+   // const [id, setId] = useState('')
 
   useEffect(() => {
     allStartShips(setStartships)
   }, [])
 
   return (
-    <>
+    
         <div className="container">
             <div className="row ">
-                <div className="col-12 ">
+                <div className="col-12 text-center">
                     {startships != null ? (startships.map(startship => (
-                    <div className="card text-start bg-secondary m-3" key={startship.id}>
+                    <div className="card text-start bg-secondary m-3" key={startship.name}>
                         <div className="card-body p-1 " >
-                            <h6 className="text-uppercase  mb-0">{startship.name} </h6>
+                            <a href={`/starships/${startship.name}`} className="text-uppercase text-white mb-0" > 
+                            {startship.name} 
+                            </a>
                             <p className="mb-0 ">{startship.model}</p>
                         </div>
                     </div>
-                    ))) : ('Cargando...')}
+                    ))) : (<div className="spinner-border text-warning text-center" role="status">
+                  </div>)}
                 </div>
             </div>
         </div>
-    </>
+    
   )
 }
 
