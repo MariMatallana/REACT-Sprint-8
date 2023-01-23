@@ -4,19 +4,16 @@ import Startships from './Startships'
 
 const StartshipInfo = () => {
 
-    const params = useParams()
+    const {id} = useParams()
 
-    useEffect(() => {
-       console.log(params)
-    }, [params])
+    
 
 
 
 return (
    
     <div className="container text-white">
-        <h5 className="text-uppercase mx-auto text-center mt-4"> {params.name}</h5>
-        <img></img>
+        <h5 className="text-uppercase mx-auto text-center mt-4"> {id}</h5>
     </div>
     
 )

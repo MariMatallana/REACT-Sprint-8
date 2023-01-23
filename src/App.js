@@ -43,7 +43,7 @@ function App() {
             <div className="container mt-3">
               <Routes>
                 <Route path='/starships' element={<Startships />}></Route>
-                <Route path='/starships/:name' element={<StartshipInfo />}>  </Route>
+                <Route path='/starships/:id' element={<StartshipInfo />}>  </Route>
                 <Route path='/' element={<Home />}></Route>
               </Routes>
             </div>

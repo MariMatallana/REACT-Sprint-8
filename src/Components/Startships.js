@@ -5,11 +5,22 @@ import {Link} from 'react-router-dom'
 function Startships() {
 
     const [startships, setStartships ] = useState(null)
-   // const [id, setId] = useState('')
+    const [url, setUrl] = useState('')
+    const [id, setId] = useState('')
 
   useEffect(() => {
     allStartShips(setStartships)
   }, [])
+
+  useEffect(() => {
+
+    url.length === 34 ? setId(url.slice(-2, -1)) : setId(url.slice(-3, -1))
+    console.log(url)
+    console.log(id)
+
+  }, [url, id])
+  
+  
 
   return (
     
@@ -19,10 +30,11 @@ function Startships() {
                     {startships != null ? (startships.map(startship => (
                     <div className="card text-start bg-secondary m-3" key={startship.name}>
                         <div className="card-body p-1 " >
-                            <a href={`/starships/${startship.name}`} className="text-uppercase text-white mb-0" > 
+                            <Link to={`/starships/${id}`} className="text-uppercase text-white mb-0" onClick={() => setUrl(startship.url)}> 
                             {startship.name} 
-                            </a>
+                            </Link>
                             <p className="mb-0 ">{startship.model}</p>
+                            {/* <p>{startship.url}</p> */}
                         </div>
                     </div>
                     ))) : (<div className="spinner-border text-warning text-center" role="status">
