@@ -15,19 +15,19 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-dark">
-        <nav className="navbar fixed-top navbar-expand-lg bg-white p-0 text-center">
-          <div className="container-fluid bg-dark">
-            <div className="navbar-brand mx-auto" href="#">
-              <img className="p-2" src={starwars} width='120px'></img>
-            </div>
-
+      
+        <nav className="navbar fixed-top navbar-expand-lg bg-white p-0 ">
+          <div className="container-fluid bg-dark aling-center">
+                <div className="navbar-brand mx-auto " href="#">
+                  <img className="p-2 " src={starwars} width='120px'></img>
+                </div>
           </div>
         </nav>
+        <div className="bg-dark">
         <div className='bg-dark'>
-          <header className="container text-center mt-3">
+          <header className="container text-center mt-5">
             <div className="row align-self-center">
-              <div className="col-12 align-self-center m-3 text-white">Star Wars</div>
+              <div className="col-12 align-self-center m-3 text-white"></div>
               <div>
                 <Link to="/" className='btn btn-warning m-1 btn-sm'>
                   Home
@@ -51,7 +51,7 @@ function App() {
         </div>
       </div>
     </Router>
-    
+
   );
 }
 

@@ -19,7 +19,7 @@ const StartshipInfo = () => {
                 <div className="text-center">
                     <h5 className="text-uppercase mx-auto text-center mt-4">{ship.name}</h5>
                     <br></br>
-                    <img className="col-md-6 col-sm-12" src={picture}></img>
+                    <img className="col-md-6 col-sm-12 border-bottom border-warning" src={picture}></img>
                 </div>
             </div>
             <div className="row mt-4">
@@ -29,7 +29,7 @@ const StartshipInfo = () => {
                     <p className="text-uppercase mx-auto text-center mb-0"> <b>Manufacturer: </b>{ship.manufacturer}</p>
                     <p className="text-uppercase mx-auto text-center mb-0"> <b>Cost: </b>{ship.cost_in_credits} credits</p>
                 </div>
-                <div className="row mt-4 text-right">
+                <div className="row mt-3 text-right">
                     <div className="col-md-6">
                     <p className="text-uppercase mx-auto mb-0 "> <b>Crew: </b>{ship.crew}</p>
                 <p className="text-uppercase mx-auto mb-0"> <b>Passengers capacity: </b>{ship.passengers}</p>
