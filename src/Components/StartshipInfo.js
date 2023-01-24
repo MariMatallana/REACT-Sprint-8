@@ -1,16 +1,19 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { useParams } from 'react-router-dom'
-import { oneShip } from './Logic'
+import React, { useEffect, useContext } from 'react'
 import { DataContext } from './Aplication/DataContext'
 
 const StartshipInfo = () => {
 
-    const { picture, ship, setShip } = useContext(DataContext)
-    const params = useParams()
-
-    useEffect(() => {
-        oneShip(params.id, setShip)
+    const { ship, url, oneShip } = useContext(DataContext)
+    
+    useEffect (() => {
+        oneShip(url)
     }, [])
+
+    let id 
+    url.length === 34 ? id = url.slice(-2, -1) : id = url.slice(-3, -1)
+
+    let picture = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
+
 
     return (
 

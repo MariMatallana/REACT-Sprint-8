@@ -6,13 +6,7 @@ const allStartShips = async (state) => {
     state(peticion.data.results)
 }
 
-const oneShip = async (id, state) => {
-    const peticion = await axios.get(`https://swapi.dev/api/starships/${id}`)
-    state(peticion.data)
-}
-
-
 export {
     allStartShips,
-    oneShip,
+
 }
