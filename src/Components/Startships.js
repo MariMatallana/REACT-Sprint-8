@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { allStartShips } from './Logic';
 import {Link} from 'react-router-dom'
-import {useContext} from 'react';
+import {DataContext} from './Aplication/DataContext'
 
 function Startships() {
 
-    const [startships, setStartships ] = useState(null)
-    const [url, setUrl] = useState('')
-    const [id, setId] = useState('')
-    const [picture, setPicture] = useState(null)
-
+    const {startships, setStartships, url, setUrl, id, setId, picture, setPicture} = useContext(DataContext)
+    
   useEffect(() => {
     allStartShips(setStartships)
   }, [])
@@ -40,7 +37,7 @@ function Startships() {
                             {startship.name} 
                             </Link>
                             <p className="mb-0 ">{startship.model}</p>
-                            <img src={picture} ></img>
+                            {/* <img src={picture} ></img> */}
                         </div>
                     </div>
                     ))) : (<div className="spinner-border text-warning text-center" role="status">
