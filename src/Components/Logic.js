@@ -1,6 +1,5 @@
 import axios from 'axios'
-import startships from './Startships'
-import {id, url} from './Startships'
+import {useContext} from 'react';
 
 
 const allStartShips = async (state) => {
@@ -13,7 +12,15 @@ const oneShip = async (id, state) => {
     state(peticion.data)
 }
 
+// const shipPicture = async (id, state) => {
+//     const peticion = await axios.get(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
+//     state(peticion)
+//     console.log('Estamos' + shipPicture)
+   
+// }
+
 export {
     allStartShips,
-    oneShip
+    oneShip,
+    // shipPicture
 }

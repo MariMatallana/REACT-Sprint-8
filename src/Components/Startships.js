@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { allStartShips } from './Logic';
 import {Link} from 'react-router-dom'
+import {useContext} from 'react';
 
 function Startships() {
 
     const [startships, setStartships ] = useState(null)
     const [url, setUrl] = useState('')
     const [id, setId] = useState('')
+    const [picture, setPicture] = useState(null)
 
   useEffect(() => {
     allStartShips(setStartships)
@@ -17,10 +19,14 @@ function Startships() {
     url.length === 34 ? setId(url.slice(-2, -1)) : setId(url.slice(-3, -1))
     console.log(url)
     console.log(id)
+  }, [url])
 
-  }, [url, id])
+  useEffect(() => {
+
+    setPicture(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
+  }, [id])
   
-  
+
 
   return (
     
@@ -30,11 +36,11 @@ function Startships() {
                     {startships != null ? (startships.map(startship => (
                     <div className="card text-start bg-secondary m-3" key={startship.name}>
                         <div className="card-body p-1 " >
-                            <Link to={`/starships/${id}`} className="text-uppercase text-white mb-0" onClick={() => setUrl(startship.url)}> 
+                            <Link picture={picture} to={`/starships/${id}`} className="text-uppercase text-white mb-0" onClick={() => setUrl(startship.url)}> 
                             {startship.name} 
                             </Link>
                             <p className="mb-0 ">{startship.model}</p>
-                            {/* <p>{startship.url}</p> */}
+                            <img src={picture} ></img>
                         </div>
                     </div>
                     ))) : (<div className="spinner-border text-warning text-center" role="status">

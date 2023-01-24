@@ -1,9 +1,9 @@
 import './App.css';
 import Home from './Components/Home'
-import StartshipsInfo from './Components/Startships'
 import Startships, { allStartShips } from './Components/Startships'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import starwars from './Images/starwars.jpeg';
+import MyProvider from './Components/Aplication/Provider';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +15,7 @@ import StartshipInfo from './Components/StartshipInfo';
 function App() {
 
   return (
+    <MyProvider>
     <Router>
       <div className="bg-dark">
         <nav className="navbar fixed-top navbar-expand-lg bg-white p-0 text-center">
@@ -52,6 +53,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </MyProvider>
   );
 }
 
