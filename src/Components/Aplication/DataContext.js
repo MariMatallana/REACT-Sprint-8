@@ -26,10 +26,6 @@ export const DataContextProvider = ({ children }) => {
             setStartships,
             url,
             setUrl,
-            // id,
-            // setId,
-            // picture,
-            // setPicture,
             ship,
             setShip,
             oneShip

@@ -13,18 +13,6 @@ function Startships() {
 
   }, [])
 
-  // useEffect(() => {
-
-  //   url.length === 34 ? setId(url.slice(-2, -1)) : setId(url.slice(-3, -1))
-  //   setPicture(`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`)
-  //   console.log(url)
-  //   console.log(id)
-  // }, [url])
-
-  // useEffect(() => {
-    
-  // }, [])
-
 
   return (
     <>
