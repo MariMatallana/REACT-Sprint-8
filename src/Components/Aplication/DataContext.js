@@ -9,7 +9,9 @@ export const DataContextProvider = ({ children }) => {
     const [startships, setStartships] = useState(null)
     const [url, setUrl] = useState('')
     const [ship, setShip] = useState('')
-    const [pagination, setPagination] = useState('')
+    const [nextPagination, setNextPagination] = useState('')
+    const [previousPagination, setPreviousPagination] = useState('')
+
 
     const oneShip = async (url) => {
         let peticion = await axios.get(`${url}`)
@@ -17,29 +19,22 @@ export const DataContextProvider = ({ children }) => {
         setShip(peticion)
     }
 
-  
-        const allStartShips = async () => {
-            const peticion = await axios.get('https://swapi.dev/api/starships/')
-            setStartships(peticion.data.results)
-            setPagination(peticion.data.next)
-            console.log(pagination)
-            console.log(startships)
-        }
-     
-        // const pages = async () => {
-        //     const peticion = await axios.get('https://swapi.dev/api/starships/')
-        //     setPagination(peticion.data)
-        //     console.log(pagination)
-        // }
+    const allStartShips = async () => {
+        const peticion = await axios.get('https://swapi.dev/api/starships')
+        setStartships(peticion.data.results)
+        setNextPagination(peticion.data.next)
+        setPreviousPagination(peticion.data.previous)
+        console.log(nextPagination)
+        console.log(previousPagination)
+    }
 
-    
-
-    // const allStartShips = async () => {
-    //     const peticion = await axios.get('https://swapi.dev/api/starships/')
-    //     setTodasLasNaves(peticion.data.results)
-        
-    // }
-    
+    const changePage = (page) => {
+    axios.get(page)
+    .then(peticion => {
+        const {results} = peticion.data
+        console.log(page)
+    })
+    }
 
     return (
 
@@ -52,9 +47,12 @@ export const DataContextProvider = ({ children }) => {
             ship,
             setShip,
             oneShip,
-            pagination, 
-            setPagination,
-            allStartShips
+            allStartShips,
+            nextPagination,
+            setNextPagination,
+            previousPagination,
+            setPreviousPagination,
+            changePage
         }}>
             {children}
         </DataContext.Provider>

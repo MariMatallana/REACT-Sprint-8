@@ -1,5 +1,4 @@
 import { useEffect, useState, useContext } from 'react';
-import { allStartShips } from './Logic';
 import { Link } from 'react-router-dom'
 import { DataContext } from './Aplication/DataContext'
 import Pagination from './Pagination';
@@ -11,7 +10,6 @@ function Startships() {
 
   useEffect(() => {
     allStartShips()
-    // pages()
   }, [])
 
   return (

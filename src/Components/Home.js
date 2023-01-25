@@ -16,7 +16,6 @@ return (
         <p>
             ¿Estás listo para empezar?
         </p>
-        
     </div>
    
 )
