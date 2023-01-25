@@ -4,12 +4,12 @@ import { DataContext } from './Aplication/DataContext'
 const StartshipInfo = () => {
 
     const { ship, url, oneShip } = useContext(DataContext)
-    
-    useEffect (() => {
+
+    useEffect(() => {
         oneShip(url)
     }, [])
 
-    let id 
+    let id
     url.length === 34 ? id = url.slice(-2, -1) : id = url.slice(-3, -1)
 
     let picture = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
@@ -34,19 +34,19 @@ const StartshipInfo = () => {
                 </div>
                 <div className="row mt-3 text-right">
                     <div className="col-md-6">
-                    <p className="text-uppercase mx-auto mb-0 "> <b>Crew: </b>{ship.crew}</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Passengers capacity: </b>{ship.passengers}</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Cargo capacity: </b>{ship.cargo_capacity} tons</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Consumables: </b>{ship.consumables} months</p>
+                        <p className="text-uppercase mx-auto mb-0 "> <b>Crew: </b>{ship.crew}</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Passengers capacity: </b>{ship.passengers}</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Cargo capacity: </b>{ship.cargo_capacity} tons</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Consumables: </b>{ship.consumables} months</p>
                     </div>
                     <div className="col-md-6">
-                    <p className="text-uppercase mx-auto mb-0"> <b>Length: </b>{ship.length} meters</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Maximun atmospherering speed: </b>{ship.max_atmosphering_speed} km/h</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Hyperdrive rating: </b>{ship.hyperdrive_rating}</p>
-                <p className="text-uppercase mx-auto mb-0"> <b>Maximun speed in realspace: </b>{ship.MGLT} mglt</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Length: </b>{ship.length} meters</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Maximun atmospherering speed: </b>{ship.max_atmosphering_speed} km/h</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Hyperdrive rating: </b>{ship.hyperdrive_rating}</p>
+                        <p className="text-uppercase mx-auto mb-0"> <b>Maximun speed in realspace: </b>{ship.MGLT} mglt</p>
                     </div>
                 </div>
-                  </div>
+            </div>
         </div>
 
     )
