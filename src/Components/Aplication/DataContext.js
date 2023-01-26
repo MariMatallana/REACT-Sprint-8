@@ -32,7 +32,9 @@ export const DataContextProvider = ({ children }) => {
     axios.get(page)
     .then(peticion => {
         const {results} = peticion.data
-        console.log(page)
+        setStartships(results)
+        setPreviousPagination(peticion.data.previous)
+        setNextPagination(peticion.data.next)
     })
     }
 
