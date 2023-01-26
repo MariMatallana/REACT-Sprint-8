@@ -13,13 +13,13 @@ function Home() {
             <div id="carouselExampleFade" className="carousel slide carousel-fade">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={Carrusel1} className="d-block w-100"  />
+                        <img src={Carrusel1} className="d-block w-100 border-bottom border-warning border-5"  />
                     </div>
                     <div className="carousel-item">
-                        <img src={Carrusel3} className="d-block w-100"  />
+                        <img src={Carrusel3} className="d-block w-100 border-bottom border-warning border-5"  />
                     </div>
                     <div className="carousel-item">
-                        <img src={Carrusel4} className="d-block w-100"  />
+                        <img src={Carrusel4} className="d-block w-100 border-bottom border-warning border-5"  />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
