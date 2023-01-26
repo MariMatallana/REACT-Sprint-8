@@ -2,6 +2,7 @@ import React from 'react'
 import Carrusel1 from '../Images/Carrusel1.jpeg';
 import Carrusel4 from '../Images/Carrusel4.jpeg';
 import Carrusel3 from '../Images/Carrusel3.png';
+import Login from './Login';
 
 function Home() {
 
@@ -42,6 +43,7 @@ function Home() {
                 ¿Estás listo para empezar?
             </p>
         </div>
+      
 
     )
 
