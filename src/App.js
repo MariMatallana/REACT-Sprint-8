@@ -3,7 +3,7 @@ import Home from './Components/Home'
 import Startships, { allStartShips } from './Components/Startships'
 import React from 'react';
 import starwars from './Images/starwars.jpeg';
-import Login from './Components/Login';
+import Register from './Components/Register';
 import {
   BrowserRouter as Router,
   Routes,
@@ -39,7 +39,7 @@ function App() {
                 </Link>
               </div>
               <div className="col-md-4">
-                <Link to="/login" className='btn btn-danger m-1  btn-sm'>
+                <Link to="/register" className='btn btn-danger m-1  btn-sm'>
                   Login
                 </Link>
               </div>
@@ -48,7 +48,7 @@ function App() {
           <div className='bg-dark text-white'>
             <div className="container mt-3">
               <Routes>
-                <Route path='/login' element={<Login />}></Route>
+                <Route path='/register' element={<Register />}></Route>
                 <Route path='/starships' element={<Startships />}></Route>
                 <Route path='/starshipsInfo' element={<StartshipInfo />}>  </Route>
                 <Route path='/' element={<Home />}></Route>
