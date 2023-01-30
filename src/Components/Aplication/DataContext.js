@@ -26,8 +26,6 @@ export const DataContextProvider = ({ children }) => {
         setStartships(peticion.data.results)
         setNextPagination(peticion.data.next)
         setPreviousPagination(peticion.data.previous)
-        console.log(nextPagination)
-        console.log(previousPagination)
     }
 
     const changePage = (page) => {

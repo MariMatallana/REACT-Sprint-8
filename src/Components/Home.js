@@ -11,7 +11,8 @@ function Home() {
     return (
 
         <div>
-            <div id="carouselExampleFade" className="carousel slide carousel-fade">
+            
+            <div id="carouselExampleFade" className="carousel slide carousel-fade mt-5">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={Carrusel1} className="d-block w-100 border-bottom border-warning border-5"  />
@@ -37,7 +38,7 @@ function Home() {
                 ¡Bienvenido!
             </h4>
             <p className="text-center">
-                A continuación encontrarás toda la información de las naves de StarWars.
+                Aquí podrás encontrar toda la información de las naves de StarWars.
             </p>
             <p className="text-center">
                 ¿Estás listo para empezar?
