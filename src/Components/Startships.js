@@ -14,13 +14,13 @@ function Startships() {
 
   return (
     <>
-      <div className="container">
-        <div className="row ">
-          <div className="col-12 text-center">
+      <div className="container text-center">
+        <div className="row text-center ">
+          <div className="col-12 col-md-6 text-center mx-auto">
             {startships != null ? (startships.map(startship => (
-              <div className="card text-start bg-secondary m-3" key={startship.name}>
-                <div className="card-body p-1 " >
-                  <Link to={`/starshipsInfo`} className="text-uppercase text-white mb-0" onClick={() => setUrl(startship.url)}>
+              <div className="tarjeta card text-start m-3" key={startship.name}>
+                <div className="card-body p-1" >
+                  <Link to={`/starshipsInfo`} className="text-uppercase text-warning mb-0" onClick={() => setUrl(startship.url)}>
                     {startship.name}
                   </Link>
                   <p className="mb-0 ">{startship.model}</p>

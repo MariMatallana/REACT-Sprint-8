@@ -1,159 +1,59 @@
+import { Form } from "react-bootstrap";
+import firebaseDb from "../firebaseConfig";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import app from '../firebaseConfig'
-import { useState } from "react";
+import SingIn from "./SingIn";
+const auth = getAuth(firebaseDb)
 
-function Register() {
+const Register = () => {
 
-    const auth = getAuth(app);
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    async function submitHandler(e) {
+        e.preventDefault();
+        const email = e.target.formEmail.value;
+        const password = e.target.formPassword.value;
+        console.log(email, password);
 
-    const singUp = () => {
-
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log(user)
-            alert("Usuario registrado correctamente")
-            // ...
-        })
-        // .catch((error) => {
-        //     const errorCode = error.code;
-        //     //const errorMessage = error.message;
-        //     alert(errorCode)
-        //     // ..
-        // });
-    }
+        await createUserWithEmailAndPassword(auth, email,  password)
+            .then((res) => {
+                console.log(res)
+                alert("Usuario registrado")
+                e.target.reset();
+            })
+            .catch(err => {
+                alert(err.message)
+            });
+    };
 
     return (
-
         <>
             <div className="row mt-5">
-                <div className="col-6">
-                    <form className="form-group mt-3">
-                        <h5>Crea una cuenta</h5>
-                        <input
-                            onChange={(e) =>  setEmail(e.target.value) }
-                            className="form-control mb-3"
-                            type="email"
-                            placeholder="email"
-                            // value={email}
-                            >
-                        </input>
-                        <input
-                             onChange={(e) =>  setPassword(e.target.value)}
-                            className="form-control mb-3"
-                            type="password"
-                            placeholder="contraseña"
-                            // value={password}
-                            >
-                        </input>
-                        <button
+                <div className="col-12 col-md-6">
+                    <form onSubmit={submitHandler}>
+                        <Form.Group controlId="formEmail">
+                            <div className="w-75 mx-auto mb-3">
+                            <h5 className="mb-3">Crea una cuenta</h5>
+                                <Form.Control type="email" placeholder="Correo electrónico" />
+                            </div>
+                        </Form.Group>
+                        <Form.Group controlId="formPassword">
+                            <div className="w-75 mx-auto mb-3">
+                                <Form.Control required type="password" placeholder="Contraseña" />
+                            </div>
+                        </Form.Group>
+                        <div className="w-75 mx-auto mb-3">
+                            <button
                             className="btn btn-block btn-info btn-warning m-1 btn-sm"
-                            onClick={singUp}>
+                            type="submit">
                             Registrar
-                        </button>
+                            </button>
+                        </div>
                     </form>
+                </div>
+                <div className="col-12 col-md-6">
+                <SingIn></SingIn>
                 </div>
             </div>
         </>
-    );
-
+    )
 }
-export default Register;
 
-
-// import { createUserWithEmailAndPassword} from 'firebase/auth'
-// import { auth } from "../firebaseConfig"
-// import { createContext, useContext } from 'react';
-
-// export 
-
-// const Register = () => {
-
-//   async function registra() {
-//         e.preventDefaul();
-//         const email = "mari@marim.com"
-//         const password = "12365844"
-//         console.log(email, password)
-//         await createUserWithEmailAndPassword(auth, email, password)
-//             .then((res) => {
-//                 alert("usuario registrado")
-//                 console.log(res);
-//             })
-//             // .catch((error) => {
-//             //     console.log(error)
-//             // });
-//     };
-
-//     // const singIn = (e) => {
-//     //     e.preventDefaul();
-//     //     signInWithEmailAndPassword(auth, email, password)
-//     //     .then((userCredential) => {
-//     //         console.log(userCredential)
-//     //     }) 
-//     //     .catch((err) => {
-//     //         console.log(err)
-//     //     })
-//     // }
-
-
-//     return (
-//         <>
-//             <div className="row mt-5">
-//                 <div className="col-6">
-//                     <form  className="form-group mt-3">
-//                         <h5>Crea una cuenta</h5>
-//                         {/* <input
-//                             onChange={(e) => { setEmail(e.target.value) }}
-//                             className="form-control mb-3"
-//                             type="email"
-//                             placeholder="email"
-//                             value={email}>
-//                         </input>
-//                         <input
-//                             onChange={(e) => { setPassword(e.target.value) }}
-//                             className="form-control mb-3"
-//                             type="password"
-//                             placeholder="contraseña"
-//                             value={password}>
-//                         </input> */}
-//                         <button
-//                             className="btn btn-block btn-info btn-warning m-1 btn-sm"
-//                            onClick={() => registra}>
-//                             Registrar
-//                         </button>
-//                     </form>
-//                 </div>
-//                 <div className="col-6">
-//                     {/* <form onSubmit={singIn} className="form-group mt-3">
-//                         <h5>Inicia Sesión</h5>
-//                         <input
-//                             onChange={(e) => { setEmail(e.target.value) }}
-//                             className="form-control mb-3"
-//                             type="email"
-//                             placeholder="email"
-//                             value={email}>
-//                         </input>
-//                         <input
-//                             onChange={(e) => { setPassword(e.target.value) }}
-//                             className="form-control mb-3"
-//                             type="password"
-//                             placeholder="contraseña"
-//                             value={password}>
-//                         </input>
-//                         <button
-//                             className="btn btn-block btn-info btn-warning m-1 btn-sm"
-//                             type="submit">
-//                             Ingresar
-//                         </button>
-//                     </form> */}
-//                 </div>
-//             </div>
-//         </>
-//     )
-
-// }
-
-// export default Register;
+export default Register

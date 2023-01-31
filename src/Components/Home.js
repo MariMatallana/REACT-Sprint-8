@@ -15,10 +15,10 @@ function Home() {
             <div id="carouselExampleFade" className="carousel slide carousel-fade mt-5">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={Carrusel1} className="d-block w-100 border-bottom border-warning border-5"  />
+                        <img src={Carrusel3} className="d-block w-100 border-bottom border-warning border-5"  />
                     </div>
                     <div className="carousel-item">
-                        <img src={Carrusel3} className="d-block w-100 border-bottom border-warning border-5"  />
+                        <img src={Carrusel1} className="d-block w-100 border-bottom border-warning border-5"  />
                     </div>
                     <div className="carousel-item">
                         <img src={Carrusel4} className="d-block w-100 border-bottom border-warning border-5"  />
@@ -34,7 +34,7 @@ function Home() {
                 </button>
             </div>
 
-            <h4 className="text-center mt-4">
+            <h4 className="text-center mt-5 text-warning">
                 ¡Bienvenido!
             </h4>
             <p className="text-center">
