@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './Components/Home'
-import Startships, { allStartShips } from './Components/Startships'
+import Startships from './Components/Startships'
 import React from 'react';
 import starwars from './Images/starwars.jpeg';
 import Register from './Components/Register';
@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  Link,
 } from 'react-router-dom'
 import StartshipInfo from './Components/StartshipInfo';
 

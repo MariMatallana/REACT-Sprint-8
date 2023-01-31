@@ -2,12 +2,14 @@ import { Form } from "react-bootstrap";
 import firebaseDb from "../firebaseConfig";
 import { DataContext } from './Aplication/DataContext'
 import { useContext } from 'react';
-import { getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 const auth = getAuth(firebaseDb)
 
 const SingIn = () => {
 
   const { itsLogged, setItsLogged } = useContext(DataContext)
+
 
   async function submitHandler(e) {
     e.preventDefault();
@@ -24,16 +26,18 @@ const SingIn = () => {
         e.target.reset();
       })
       .catch(err => {
-          alert(err.message)
-        });
-    };
+        alert(err.message)
+      });
+  };
+
+
 
   return (
     <>
       <form onSubmit={submitHandler}>
         <Form.Group controlId="formEmail1">
           <div className="w-75  mb-3 ms-5">
-          <h5 className="mb-3">Inicia Sesión</h5>
+            <h5 className="mb-3">Inicia Sesión</h5>
             <Form.Control type="email" placeholder="Correo electrónico" />
           </div>
         </Form.Group>
@@ -42,15 +46,15 @@ const SingIn = () => {
             <Form.Control required type="password" placeholder="Contraseña" />
           </div>
         </Form.Group>
-        <div className="w-75 mb-3 ms-5">
-        <button 
-             className="btn btn-block btn-info btn-warning m-1 btn-sm"
-             type="submit">
+        <div className="mb-3 ms-5">
+          <button
+            className="btn btn-block btn-info btn-warning m-1 btn-sm"
+            type="submit">
             Ingresar
-        </button>
+          </button>
         </div>
       </form>
-  </>
+    </>
   )
 }
 

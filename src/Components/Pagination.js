@@ -9,10 +9,10 @@ const Pagination = () => {
 
   return (
     <div>
-      { previousPagination ? (<button className='btn btn-warning btn-sm me-1' onClick={() => changePage(previousPagination)}> Anterior</button>) : null
+      {previousPagination ? (<button className='btn btn-warning btn-sm me-1' onClick={() => changePage(previousPagination)}> Anterior</button>) : null
       }
-      { nextPagination ?   (<button className='btn btn-warning btn-sm ms-1' onClick={() => changePage(nextPagination)}> Siguiente</button>) : null}
-      
+      {nextPagination ? (<button className='btn btn-warning btn-sm ms-1' onClick={() => changePage(nextPagination)}> Siguiente</button>) : null}
+
     </div>
 
   )

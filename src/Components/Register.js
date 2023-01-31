@@ -12,7 +12,7 @@ const Register = () => {
         const password = e.target.formPassword.value;
         console.log(email, password);
 
-        await createUserWithEmailAndPassword(auth, email,  password)
+        await createUserWithEmailAndPassword(auth, email, password)
             .then((res) => {
                 console.log(res)
                 alert("Usuario registrado")
@@ -30,7 +30,7 @@ const Register = () => {
                     <form onSubmit={submitHandler}>
                         <Form.Group controlId="formEmail">
                             <div className="w-75 mx-auto mb-3">
-                            <h5 className="mb-3">Crea una cuenta</h5>
+                                <h5 className="mb-3">Crea una cuenta</h5>
                                 <Form.Control type="email" placeholder="Correo electrónico" />
                             </div>
                         </Form.Group>
@@ -41,15 +41,15 @@ const Register = () => {
                         </Form.Group>
                         <div className="w-75 mx-auto mb-3">
                             <button
-                            className="btn btn-block btn-info btn-warning m-1 btn-sm"
-                            type="submit">
-                            Registrar
+                                className="btn btn-block btn-info btn-warning m-1 btn-sm"
+                                type="submit">
+                                Registrar
                             </button>
                         </div>
                     </form>
                 </div>
                 <div className="col-12 col-md-6">
-                <SingIn></SingIn>
+                    <SingIn></SingIn>
                 </div>
             </div>
         </>

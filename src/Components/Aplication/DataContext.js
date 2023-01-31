@@ -56,8 +56,8 @@ export const DataContextProvider = ({ children }) => {
             previousPagination,
             setPreviousPagination,
             changePage,
-            itsLogged, 
-            setItsLogged 
+            itsLogged,
+            setItsLogged
         }}>
             {children}
         </DataContext.Provider>
