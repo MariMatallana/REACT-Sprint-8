@@ -11,6 +11,7 @@ export const DataContextProvider = ({ children }) => {
     const [ship, setShip] = useState('')
     const [nextPagination, setNextPagination] = useState('')
     const [previousPagination, setPreviousPagination] = useState('')
+    const [itsLogged, setItsLogged] = useState(false)
 
 
     const oneShip = async (url) => {
@@ -36,6 +37,8 @@ export const DataContextProvider = ({ children }) => {
             })
     }
 
+
+
     return (
 
         <DataContext.Provider value={{
@@ -53,6 +56,8 @@ export const DataContextProvider = ({ children }) => {
             previousPagination,
             setPreviousPagination,
             changePage,
+            itsLogged, 
+            setItsLogged 
         }}>
             {children}
         </DataContext.Provider>

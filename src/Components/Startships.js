@@ -5,8 +5,7 @@ import Pagination from './Pagination';
 
 function Startships() {
 
-  const { startships, setUrl, allStartShips } = useContext(DataContext)
-
+  const { startships, setUrl, allStartShips, itsLogged, setItsLogged } = useContext(DataContext)
 
   useEffect(() => {
     allStartShips()
@@ -20,7 +19,7 @@ function Startships() {
             {startships != null ? (startships.map(startship => (
               <div className="tarjeta card text-start m-3" key={startship.name}>
                 <div className="card-body p-1" >
-                  <Link to={`/starshipsInfo`} className="text-uppercase text-warning mb-0" onClick={() => setUrl(startship.url)}>
+                  <Link to={`/starshipsInfo`} className="text-uppercase text-warning mb-0" onClick={  () => setUrl(startship.url) }>
                     {startship.name}
                   </Link>
                   <p className="mb-0 ">{startship.model}</p>

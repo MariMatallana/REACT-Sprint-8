@@ -14,7 +14,6 @@ import StartshipInfo from './Components/StartshipInfo';
 
 function App() {
 
-
   return (
     <Router>
       <nav className="navbar fixed-top navbar-expand-lg bg-white p-0 ">
@@ -50,7 +49,7 @@ function App() {
               <Routes>
                 <Route path='/register' element={<Register />}></Route>
                 <Route path='/starships' element={<Startships />}></Route>
-                <Route path='/starshipsInfo' element={<StartshipInfo />}>  </Route>
+                <Route path='/starshipsInfo' element={ <StartshipInfo /> }>  </Route>
                 <Route path='/' element={<Home />}></Route>
               </Routes>
             </div>
